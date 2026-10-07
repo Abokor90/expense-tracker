@@ -132,26 +132,32 @@ function ExpenseItem({ title, amount, category, date }) {
 const [isPaid, setIsPaid] = useState(false);
 
 // Flips the value to its opposite: false becomes true, true becomes false
+
+```javascript
 function handleTogglePaid() {
-setIsPaid(!isPaid);
+  setIsPaid(!isPaid);
 }
+```
 
 return (
-<div className="expense-item">
-<h2>Title: {title}</h2>
-<p>Amount: ${amount}</p>
-<p>Category: {category}</p>
-<p>Date: {date}</p>
-{/_ A ternary picks which text to show based on state _/}
-<p>Status: {isPaid ? "Paid" : "Unpaid"}</p>
-<button onClick={handleTogglePaid}>
-{isPaid ? "Mark as unpaid" : "Mark as paid"}
-</button>
-</div>
+
+  <div className="expense-item">
+    <h2>Title: {title}</h2>
+    <p>Amount: ${amount}</p>
+    <p>Category: {category}</p>
+    <p>Date: {date}</p>
+    {/_ A ternary picks which text to show based on state _/}
+    <p>Status: {isPaid ? "Paid" : "Unpaid"}</p>
+    <button onClick={handleTogglePaid}>
+    {isPaid ? "Mark as unpaid" : "Mark as paid"}
+    </button>
+  </div>
 );
 }
 
+```javascript
 export default ExpenseItem;
+```
 
 Concepts used:
 
