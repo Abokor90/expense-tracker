@@ -116,3 +116,48 @@ export default ExpenseItem;
 - User accounts and authentication
 - Persistent PostgreSQL storage
 - Deployment
+
+Lesson 3: State
+
+Feature added: each expense now has a Paid / Unpaid status with a button to toggle it.
+
+ExpenseItem keeps an isPaid boolean in state. Clicking the button flips it, and the status text and the button label update automatically.
+
+jsx
+// src/components/ExpenseItem.jsx
+import { useState } from "react";
+
+function ExpenseItem({ title, amount, category, date }) {
+// isPaid is state (starts as false). setIsPaid is the only way to change it.
+const [isPaid, setIsPaid] = useState(false);
+
+// Flips the value to its opposite: false becomes true, true becomes false
+function handleTogglePaid() {
+setIsPaid(!isPaid);
+}
+
+return (
+<div className="expense-item">
+<h2>Title: {title}</h2>
+<p>Amount: ${amount}</p>
+<p>Category: {category}</p>
+<p>Date: {date}</p>
+{/_ A ternary picks which text to show based on state _/}
+<p>Status: {isPaid ? "Paid" : "Unpaid"}</p>
+<button onClick={handleTogglePaid}>
+{isPaid ? "Mark as unpaid" : "Mark as paid"}
+</button>
+</div>
+);
+}
+
+export default ExpenseItem;
+
+Concepts used:
+
+useState with a boolean value
+A state setter (setIsPaid) instead of changing the variable directly
+An event handler passed to onClick (without parentheses)
+A ternary expression to show different text depending on state
+
+Behavior to note: every ExpenseItem keeps its own state, so marking "Oil" as paid doesn't change "Rice". This status is not saved: refreshing the page resets everything to unpaid. Saving data permanently comes later, with the backend and PostgreSQL.
