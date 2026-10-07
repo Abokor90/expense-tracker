@@ -139,6 +139,7 @@ function handleTogglePaid() {
 }
 ```
 
+```javascript
 return (
 
   <div className="expense-item">
@@ -154,6 +155,7 @@ return (
   </div>
 );
 }
+```
 
 ```javascript
 export default ExpenseItem;
