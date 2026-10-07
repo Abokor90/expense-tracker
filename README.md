@@ -117,8 +117,8 @@ export default ExpenseItem;
 - Persistent PostgreSQL storage
 - Deployment
 
-Lesson 3: State
-
+**Lesson 3: State
+**
 Feature added: each expense now has a Paid / Unpaid status with a button to toggle it.
 
 ExpenseItem keeps an isPaid boolean in state. Clicking the button flips it, and the status text and the button label update automatically.
@@ -161,8 +161,8 @@ return (
 export default ExpenseItem;
 ```
 
-Concepts used:
-
+**Concepts used:
+**
 useState with a boolean value
 A state setter (setIsPaid) instead of changing the variable directly
 An event handler passed to onClick (without parentheses)
