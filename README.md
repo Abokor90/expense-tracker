@@ -10,6 +10,7 @@ A full-stack expense tracking application, built step by step as a learning proj
 
 - [x] Display a list of expenses (title, amount, category, date)
 - [x] Mark an expense as paid or unpaid
+- [x] Highlight an expense when hovering over it
 
 **Planned**
 

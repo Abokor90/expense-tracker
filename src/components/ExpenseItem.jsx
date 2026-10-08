@@ -4,12 +4,26 @@ import { useState } from 'react'
 function ExpenseItem({ title, amount, category, date }) {
   const [isPaid, setIsPaid] = useState(false);
 
+  const [isHovered, setIsHovered ]  = useState(false);
+
   function handleTogglePaid() {
     setIsPaid(!isPaid);
   }
 
+  function handleMouseEnter() {
+    setIsHovered(true);
+  }
+
+  function handleMouseLeave() {
+    setIsHovered(false);
+  }
+
   return (
-    <div className="expense-item">
+    <div className="expense-item"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      style={{backgroundColor : isHovered ? 'lightgray' : 'white'}}
+    >
       <h2>Title: {title}</h2>
       <p>Amount: ${amount}</p>
       <p>Category: {category}</p>
