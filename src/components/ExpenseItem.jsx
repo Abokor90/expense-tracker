@@ -18,6 +18,7 @@ function ExpenseItem({ title, amount, category, date }) {
     setIsHovered(false);
   }
 
+
   return (
     <div className="expense-item"
       onMouseEnter={handleMouseEnter}
