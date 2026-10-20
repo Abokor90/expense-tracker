@@ -12,6 +12,7 @@ A full-stack expense tracking application, built step by step as a learning proj
 - [x] Mark an expense as paid or unpaid
 - [x] Highlight an expense when hovering over it
 - [x] "Add expense" form (title, amount, category, date); not saved to the list yet
+- [x] Expenses are rendered from a list of data
 
 **Planned**
 

@@ -1,16 +1,25 @@
+import { useState } from "react";
 import ExpenseItem from "./components/ExpenseItem";
 import ExpenseForm from "./components/ExpenseForm";
 
 function App() {
+  // TODO 1: put the three expenses into state as an array of objects.
+  const [expenses, setExpenses] = useState([
+    {id: 1, title: "Rice", amount: 10, category: "Food", date: "2026-10-20"},
+    {id: 2, title: "Milk", amount: 15, category: "Drinks", date: "2026-10-21"},
+    {id: 3, title: "Oil", amount: 20, category: "Cooking Oil", date: "2026-10-22"},
+  ]);
+
   return (
     <div>
       <h1>Expense Tracker</h1>
       
       <ExpenseForm />
 
-      <ExpenseItem title="Oil" amount={50} category="Cooking Oil" date="2026-01-10" />
-      <ExpenseItem title="Rice" amount={40} category="Grains" date="2026-10-20" />
-      <ExpenseItem title="Soda" amount={30} category="Beverages" date="2026-11-25" />
+      {expenses.map((expense) => (
+        <ExpenseItem key={expense.id} title={expense.title} amount={expense.amount} category={expense.category} date={expense.date} />
+      ))}
+
     </div>
   );
 }
