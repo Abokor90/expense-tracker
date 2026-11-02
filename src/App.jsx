@@ -9,15 +9,21 @@ function App() {
     {id: 3, title: "Oil", amount: 20, category: "Cooking Oil", date: "2026-10-22"},
   ]);
 
+  function handleAddExpense({ title, amount, category, date }) {
+    const newExpense = {id: Date.now(), title: title, amount: amount, category: category, date: date }
+    setExpenses([...expenses, newExpense]);
+  }
+
   return (
     <div>
       <h1>Expense Tracker</h1>
+
       
-      <ExpenseForm />
+      <ExpenseForm onAddExpense={handleAddExpense}/>
 
       {expenses.length === 0 ? (<p>No expenses yet</p>) 
-      : (expenses.map((expense) => (
-        <ExpenseItem key={expense.id} title={expense.title} amount={expense.amount} category={expense.category} date={expense.date} />
+        : (expenses.map((expense) => (
+          <ExpenseItem key={expense.id} title={expense.title} amount={expense.amount} category={expense.category} date={expense.date} />
       )))}
     </div>
   );

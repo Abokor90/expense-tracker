@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function ExpenseForm() {
+function ExpenseForm({ onAddExpense }) {
   const [title, setTitle] = useState("");
   const [amount, setAmount] = useState("");
   const [category, setCategory] = useState("");
@@ -31,7 +31,7 @@ function ExpenseForm() {
       category: category,
       date: date
     };
-    console.log(newExpense);
+    onAddExpense(newExpense)
     setTitle("");
     setAmount("");
     setCategory("");
@@ -51,11 +51,6 @@ function ExpenseForm() {
       </select>
       <input type="date" value={date} onChange={handleDateChange} />
       <button type="submit">Submit</button>
-
-      <p>New expense: {title}</p>
-      <p>Amount: {amount}</p>
-      <p>Category: {category}</p>
-      <p>Date: {date}</p>
     </form>
   );
 }

@@ -14,6 +14,8 @@ A full-stack expense tracking application, built step by step as a learning proj
 - [x] "Add expense" form (title, amount, category, date); not saved to the list yet
 - [x] Expenses are rendered from a list of data
 - [x] Empty state message when there are no expenses
+- [x] Add new expenses with a form (title, amount, category, date)
+
 
 **Planned**
 
