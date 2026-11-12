@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ExpenseItem from "./components/ExpenseItem";
 import ExpenseForm from "./components/ExpenseForm";
 
@@ -13,6 +13,10 @@ function App() {
     const newExpense = {id: Date.now(), title: title, amount: amount, category: category, date: date }
     setExpenses([...expenses, newExpense]);
   }
+
+  useEffect(() => {
+    document.title = "Expenses: " + expenses.length;
+  }, [expenses]);
 
   return (
     <div>
